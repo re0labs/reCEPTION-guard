@@ -79,3 +79,29 @@ AI-SDK.relabsV01/
 ├── foundry.toml            # Foundry configuration
 ├── requirements.txt        # Python dependencies
 └── README.md
+
+## Quick Start 
+
+### 1. Clone the repository
+
+```bash
+git clone <your-repository-url>
+cd AI-SDK.relabsV01
+
+## Quick Start for Judge
+
+### 2. Install Python dependencies
+
+pip install -r requirements.txt
+
+### 3. Run the offline demo
+
+python run_guard_demo.py
+
+### 4. Run SOLIDITY TESTS
+
+forge build
+forge test -vv
+python -m examples.test_guard
+python run_guard_demo.py
+### 3. Run the offline demo
