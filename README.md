@@ -104,5 +104,3 @@ python run_guard_demo.py
 forge build
 forge test -vv
 
-python run_guard_demo.py
-### 3. Run the offline demo
