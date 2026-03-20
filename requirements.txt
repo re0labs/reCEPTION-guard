@@ -1,6 +1,2 @@
-if you want to deploy it online the requirements are:
-
 openai
 flask
-
-otherwise, it is recommended to deploy the exec.demo version
