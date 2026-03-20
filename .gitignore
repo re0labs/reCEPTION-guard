@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+env/
+venv/
+
+out/
+cache/
+broadcast/
+lib/
+
+.DS_Store
+.env
