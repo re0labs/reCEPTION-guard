@@ -5,7 +5,7 @@ from .detectors.missing_poolmanager_verification_detector import detect_missing_
 from .detectors.incorrect_delta_accounting_detector import detect_incorrect_delta_accounting
 
 from .recommendation.recommender import Recommender
-from .ai_skill.engine import run_ai_skill
+from .ai_skill.engine import run_ai_analysis
 
 
 class Analyzer:
@@ -83,7 +83,7 @@ class Analyzer:
             finding["patch"] = rec.get("patch", "")
 
         # --- AI skill layer ---
-        ai_analysis = run_ai_skill(code, findings)
+        ai_analysis = run_ai_analysis(code, findings)
 
         return {
             "issues": issues,
