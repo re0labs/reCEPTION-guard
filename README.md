@@ -2,39 +2,42 @@
 
 #### [Website](https://reception.re-labs.io/) | [Pitchdeck](https://drive.google.com/file/d/1EzFJzVdejq8URAUaYuzT9ZngMDU1ovjZ/view?usp=sharing) | [Demo Video]()
 
-
-```**For evaluation:** this repository supports an offline mode and does not require an OpenAI API key to run the core demo. ```
-
 # AI Hook Guard
+
+**For evaluation:** this repository supports an offline mode and does **not** require an OpenAI API key to run the core demo.
 
 AI Hook Guard is a hybrid security system for Solidity hooks that detects vulnerabilities, scores risk, and suggests fixes before deployment, while also offering Solidity guard modules like access control, reentrancy protection, and delta validation to help developers build safer smart contracts.
 
-This repository includes an **offline-capable version** for evaluation.  
-The judge does **not** need an OpenAI API key to run the core demo.
+---
+
+## Overview
+
+AI Hook Guard combines two security layers:
+
+1. **Python analysis layer**  
+   Detects risky patterns in Solidity hook code before deployment.
+
+2. **Solidity protection layer**  
+   Provides safer smart contract patterns and modules for hook-based systems.
+
+This project also includes **Foundry tests** that demonstrate the difference between vulnerable and protected contract behavior.
 
 ---
 
-## Offline Evaluation Version
+## Offline Evaluation Mode
 
-This project can run in **offline mode**, which means:
+This repository includes an **offline-capable version** for judging and local testing.
 
-- no OpenAI API key is required
-- the Python analyzer still detects vulnerabilities
+The offline mode allows the project to run **without an OpenAI API key**.
+
+In offline mode:
+
+- vulnerability detectors still run
 - risk scoring still works
 - recommendations and patch suggestions still work
-- the explanation layer falls back to a built-in local summary
+- the explanation layer falls back to a local built-in summary
 
-This allows the project to be tested directly from the repository without external API credentials.
-
----
-
-## Project Overview
-
-AI Hook Guard is a hybrid smart contract security project with:
-
-- a **Python analyzer** for detecting risky hook patterns before deployment
-- a **Solidity security framework** for building safer hook-based contracts
-- **Foundry tests** demonstrating vulnerable and protected behaviors
+This means the core functionality can be evaluated directly from the repository without external API credentials.
 
 ---
 
@@ -48,31 +51,31 @@ AI Hook Guard is a hybrid smart contract security project with:
 - State corruption risk detection
 - Risk scoring
 - Patch recommendations
-- Local offline explanation mode
+- Offline local explanation mode
 
 ### Solidity security framework
 - PoolManager access control
 - Reentrancy protection
 - Delta validation
-- Demo secure contract implementation
-- Demo vulnerable contract implementation
+- Secure demo contract
+- Vulnerable demo contract
+
+### Testing
+- Foundry test suite for secure and vulnerable examples
+- Demonstrates both unsafe and protected behaviors
+- Useful for education, validation, and demos
 
 ---
 
-## Project structure
+## Project Structure
 
-- `ai_hook_guard/` → Python analysis SDK
-- `contracts/` → Solidity guard framework
-- `test/` → Foundry tests
-- `examples/` → Python example scripts
-- `run_guard_demo.py` → simple offline demo entry point
-
----
-
-## Quick Start for Judge (Offline Mode)
-
-### 1. Clone the repository
-
-```bash
-git clone <your-repository-url>
-cd AI-SDK.relabsV01
+```text
+AI-SDK.relabsV01/
+├── ai_hook_guard/          # Python analysis SDK
+├── contracts/              # Solidity security framework
+├── test/                   # Foundry tests
+├── examples/               # Python example scripts
+├── run_guard_demo.py       # Simple offline demo script
+├── foundry.toml            # Foundry configuration
+├── requirements.txt        # Python dependencies
+└── README.md
